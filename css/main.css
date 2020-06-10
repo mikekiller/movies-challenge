@@ -1,0 +1,250 @@
+body{
+    margin: 0;
+    font-family: monospace;
+}
+
+/* -------------------------- section header ------------------------------- */
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 1px 10px 0px rgba(0,0,0, 0.4);
+    z-index: 100;
+}
+.header{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "main-logo input usuario" ;
+    align-items: center;
+    padding: 5px 0 ;
+
+}
+.header-logo{
+    grid-area: main-logo;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+
+}
+.header-input{
+    grid-area: input;
+    border: 1px solid #dfe1e5;
+    border-radius: 5px;
+    width: 350px;
+    height: 25px;
+    outline: none;
+    padding-left: 10px;
+    justify-self: center;
+    text-align: center;
+
+}
+.header-logo-img{
+    background-image: url('https://library.kissclipart.com/20180902/krw/kissclipart-aaa-pioneer-valley-west-springfield-clipart-aaa-33c8f56711d17149.png');
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+}
+.header-logo-name{
+    font-size: 24px;
+    font-weight: 600;
+    padding-left: 10px;
+}
+.header-user{
+    grid-area: usuario;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+.header-user-name{
+    padding-right: 10px;
+}
+/* .header-user-name::after{
+    content: ">";
+} */
+
+.header-user-img{
+    background-image: url('https://cdna.artstation.com/p/assets/images/images/018/569/000/large/gonza-de-la-rosa-baja.jpg?1559851391');
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    border-radius: 15px;
+    position: relative;
+}
+.header-user-img::after{
+    content: "▾";
+    position: absolute;
+    right: 0;
+    margin-right: -15px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+/* -----------------------------------MAIN CONTAINER -------------------------------------- */
+main{
+    margin-top: 60px;
+}
+.main-container{
+    display: flex;
+    
+}
+.sidebar{
+    background: linear-gradient(90deg, rgb(233, 85, 85), rgb(238, 123, 123) 50%);
+    position: fixed;
+    width: 110px;
+    height: 100%;
+}
+.sidebar ul {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 100px 100px 100px 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.sidebar ul li {
+    list-style: none;
+}
+.sidebar ul li a{
+    display: inline-grid;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar-img1{
+    background-image: url('https://www.vippng.com/png/full/202-2027333_home-icon-png-white-white-home-button-transparent.png');
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+.sidebar-img2{
+    background-image: url('https://editox.github.io/Curso.Grid_MoviES/icons/trending3.png');
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+.sidebar-img3{
+    background-image: url('https://www.alvinone.com/wp-content/uploads/2017/07/white-heart.png');
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+.sidebar-img4{
+    background-image: url('https://www.materialui.co/materialIcons/action/settings_white_192x192.png');
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+
+/* -------------------------------------- section movies grid ------------------------ */
+.movie-list{
+    margin-left: 110px;
+    width: 100%;
+}
+.movie-list-tittle{
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 20px;
+}
+.main-movie{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 35px;
+    justify-content: center;
+    padding: 0 20px;
+}
+.main-movie-box{
+    position: relative;
+}
+.main-movie-box-img{
+    margin: 0;
+}
+.main-movie-box-img img{
+    width: 100%;
+}
+.main-movie-overlay{
+    background: rgba(255, 110, 112, .8);
+    position: absolute;
+    top: auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    color: whitesmoke;
+    padding: 0 15px;
+    display: none;
+}
+.main-movie-overlay-tittle{
+    font-size: 16px;
+    font-weight: 600;
+}
+.main-movie-overlay-des{
+    font-size: 12px;
+}
+
+.main-movie-box:hover .main-movie-overlay{
+    display: flex;
+}
+
+
+/* -----------------------Section Hover --------------------------------- */
+
+.header-logo:hover{
+    cursor: pointer;
+}
+.header-input:hover{
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+}
+.header-input:focus{
+    text-align: left;
+    padding-left: 10px;
+}
+.header-user:hover{
+    cursor: pointer;
+}
+
+/* -------------------- Section responsive----------------------------- */
+@media screen and (max-width:1050px){
+    .main-movie-overlay-des{
+        display: none;
+    }
+
+}
+@media screen and (max-width:1135px){
+    .main-movie-overlay{
+        padding: 0;
+    }
+    .main-movie-overlay-tittle , .main-movie-overlay-des{
+        font-size: 10px;
+     }
+
+
+}
+
+@media screen and (max-width: 768px){
+    .movie-list{
+        margin-left: 60px;
+    }
+    .main-movie{
+        grid-gap: 3px;
+        padding: 0 5px;
+
+    }
+    .sidebar{
+        width: 60px;
+        margin-top: 60px;
+    }
+    .header{
+        grid-template-columns: 1fr;
+        grid-template-areas: "main-logo" 
+                             "usuario"
+                             "input";
+
+    }
+}
